@@ -1,12 +1,18 @@
 package com.example.demo.service;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
 import java.util.Map;
 
 public interface ProductService {
 
-    void addNewMappings(Map<String, String> productMapping);
+    ResponseEntity addNewMappings(Map<String, String> productMapping);
 
-    String getActualProductByProvidedProduct(String providedProduct);
+    ResponseEntity getActualProductByProvidedProduct(String providedProduct);
 
-    Map<String, String> getProductsMapping();
+    ResponseEntity<Map<String, String>> getProductsMapping();
+
+
+    ResponseEntity<HttpStatus> addLine(String key, String value);
 }
